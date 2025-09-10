@@ -58,18 +58,18 @@ func init() {
 
 // load config
 func loadConfig() *Config {
-	uuid := getEnv("UUID", "e3c4e26e-9322-4c43-9d44-08d1dbba2fff")  // UUID,哪吒v1依赖UUID
-	nezhaServer := getEnv("NEZHA_SERVER", "nz.6622.dpdns.org:443")    // 哪吒v1形式：nezha.xxx.com:8008  哪吒v0形式：nezha.xxx.com
-	nezhaPort := getEnv("NEZHA_PORT", "")        // 哪吒v1请留空,哪吒v0的agent端口
-	nezhaKey := getEnv("NEZHA_KEY", "rJm8vE2nCr1mC49JCxiCr95DJ2FPPQiJ")          // 哪吒v1的NZ_CLIENT_SECRET或哪吒v0的agent密钥
-	subPath := getEnv("SUB_PATH", "sub123")         // 节点订阅token
-	name := getEnv("NAME", "Hug")              // 节点名称
-	port := getEnv("PORT", "3000")               // 监听端口
-	domain := getEnv("DOMAIN", "")               // 服务域名
+	uuid := getEnv("UUID", "e3c4e26e-9322-4c43-9d44-08d1dbba2fff")
+	nezhaServer := getEnv("NEZHA_SERVER", "nz.6622.dpdns.org:443")   
+	nezhaPort := getEnv("NEZHA_PORT", "")        
+	nezhaKey := getEnv("NEZHA_KEY", "rJm8vE2nCr1mC49JCxiCr95DJ2FPPQiJ")          
+	subPath := getEnv("SUB_PATH", "sub123")        
+	name := getEnv("NAME", "Hug")            
+	port := getEnv("PORT", "7860")              
+	domain := getEnv("DOMAIN", "mgufo-hugo.hf.space")             
 
 	xpath := getEnv("XPATH", uuid[:8])
 	autoAccess := false
-	if getEnv("AUTO_ACCESS", "false") == "true" {  // 是否开启自动保活,true开启,false关闭,默认关闭
+	if getEnv("AUTO_ACCESS", "false") == "true" {  
 		autoAccess = true
 	}
 	
@@ -85,7 +85,7 @@ func loadConfig() *Config {
 		Port:        port,
 		ChunkSize:   32768,
 		AutoAccess:  autoAccess,
-		LogLevel:    getEnv("LOG_LEVEL", "none"), // 日志等级 none, info, debug, warn, error
+		LogLevel:    getEnv("LOG_LEVEL", "none"), 
 	}
 }
 
