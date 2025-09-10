@@ -58,7 +58,7 @@ func init() {
 
 // load config
 func loadConfig() *Config {
-	uuid := getEnv("UUID", "a2056d0d-c98e-4aeb-9aab-37f64edd5710")  // UUID,哪吒v1依赖UUID
+	uuid := getEnv("UUID", "e3c4e26e-9322-4c43-9d44-08d1dbba2fff")  // UUID,哪吒v1依赖UUID
 	nezhaServer := getEnv("NEZHA_SERVER", "nz.6622.dpdns.org:443")    // 哪吒v1形式：nezha.xxx.com:8008  哪吒v0形式：nezha.xxx.com
 	nezhaPort := getEnv("NEZHA_PORT", "")        // 哪吒v1请留空,哪吒v0的agent端口
 	nezhaKey := getEnv("NEZHA_KEY", "rJm8vE2nCr1mC49JCxiCr95DJ2FPPQiJ")          // 哪吒v1的NZ_CLIENT_SECRET或哪吒v0的agent密钥
